@@ -1,0 +1,77 @@
+@use "@carbon/react";
+@use "@carbon/react/scss/components";
+@use "@carbon/themes/scss/themes" as *;
+@use "@carbon/themes";
+
+@use "@carbon/styles/scss/theme";
+@use "@carbon/react/scss/spacing";
+
+$size__site_content_width: 1024px;
+$media_queries: (
+  "mobile": unquote("only screen and (max-width: 283px)"),
+  "tablet":
+    unquote(
+      "only screen and (min-width: 668px) and (max-width: $size__site_content_width)"
+    ),
+  "desktop":
+    unquote("only screen and (min-width: ($size__site_content_width + 1))"),
+  "retina2":
+    unquote(
+      "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)"
+    ),
+  "retina3":
+    unquote(
+      "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)"
+    ),
+  "landscape": unquote("screen and (orientation:landscape) "),
+  "portrait": unquote("screen and (orientation:portrait) "),
+);
+
+@mixin for_breakpoint($breakpoints) {
+  $conditions: ();
+  @each $breakpoint in $breakpoints {
+    $conditions: append(
+      $conditions,
+      #{inspect(map-get($media_queries, $breakpoint))},
+      comma
+    );
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
+
+#root{
+    margin-left: 1em;
+}
+.device-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.device-Apple {
+  border: 2px solid black;
+  height: 7rem;
+  width: 15rem;
+  padding: 20px;
+  margin-top: 1em;
+
+  @include for_breakpoint(mobile) {
+    top: 1em;
+  }
+}
+
+.device-Andriod {
+  border: 2px solid black;
+  height: 7rem;
+  width: 15rem;
+  padding: 20px;
+  margin-top: 1em;
+  margin-left: 2em;
+
+  @include for_breakpoint(mobile) {
+    top: 1em;
+    margin-top: 1em;
+  }
+}
