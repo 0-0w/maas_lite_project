@@ -1,13 +1,12 @@
 import { CheckmarkOutline } from "@carbon/icons-react";
-import { HeaderGlobalBar } from "@carbon/react";
+import { Heading } from "@carbon/react";
 import "./welcome.scss";
 
 function WelcomeHeader({ name }) {
   return (
     <>
-      <HeaderGlobalBar />
       <div className="WelcomeHeader">
-        <h1>Welcome, {name}</h1>
+        <Heading>Welcome, {name}</Heading>
         <CheckmarkOutline />
         <span> Welcome</span>
       </div>

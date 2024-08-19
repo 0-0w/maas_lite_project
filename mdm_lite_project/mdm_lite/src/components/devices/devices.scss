@@ -8,10 +8,10 @@
 
 $size__site_content_width: 1024px;
 $media_queries: (
-  "mobile": unquote("only screen and (max-width: 283px)"),
+  "mobile": unquote("only screen and (max-width: 512px)"),
   "tablet":
     unquote(
-      "only screen and (min-width: 668px) and (max-width: $size__site_content_width)"
+      "only screen and (min-width: 513px) and (max-width: $size__site_content_width)"
     ),
   "desktop":
     unquote("only screen and (min-width: ($size__site_content_width + 1))"),
@@ -42,36 +42,61 @@ $media_queries: (
   }
 }
 
-#root{
-    margin-left: 1em;
+p{
+  margin-left: 2em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .device-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 2em;
 }
 
 .device-Apple {
-  border: 2px solid black;
+  border: 1px solid black;
   height: 7rem;
   width: 15rem;
   padding: 20px;
   margin-top: 1em;
-
-  @include for_breakpoint(mobile) {
-    top: 1em;
-  }
+  margin-right: 1em;
 }
 
 .device-Andriod {
-  border: 2px solid black;
+  border: 1px solid black;
   height: 7rem;
   width: 15rem;
   padding: 20px;
   margin-top: 1em;
-  margin-left: 2em;
+  margin-right: 1em;
 
-  @include for_breakpoint(mobile) {
-    top: 1em;
+}
+
+
+.checkbox-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.securityBox , .appBox, .setUpbox{
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 25px;
+  padding: 6px 14px 10px;
+  padding-top: 5px;
+}
+
+
+.setUpbox{
+  @media only screen and (max-width: 498px) {
     margin-top: 1em;
   }
 }
+
+.appBox{
+  @media only screen and (max-width: 343px) {
+    margin-top: 1em;
+  }
+  
+}
+
