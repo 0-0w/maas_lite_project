@@ -1,11 +1,4 @@
-import { Apple } from "@carbon/icons-react";
-import {
-  SelectableTile,
-  Heading,
-  Section,
-  Checkbox,
-  CheckboxGroup,
-} from "@carbon/react";
+import { SelectableTile, Checkbox, CheckboxGroup } from "@carbon/react";
 import React, { useState, useContext } from "react";
 import { DeviceContext } from "../../store/device-selection-context";
 
@@ -13,6 +6,9 @@ import "./devices.scss";
 
 function Devices() {
   const DeviceObj = useContext(DeviceContext);
+  const [isCheckedSecurity, setIsCheckedSecurity] = useState(false);
+  const [isCheckedApps, setIsCheckedApps] = useState(false);
+  const [isCheckedSetup, setIsCheckedSetup] = useState(false);
   // function AndriodDevice() {
   //   DeviceObj.Andriod = !DeviceObj.Andriod;
   //   console.log(DeviceObj);
@@ -20,10 +16,10 @@ function Devices() {
 
   return (
     <DeviceContext.Provider value={DeviceObj}>
-      <Section level={5} as="div">
-        <Heading>Let's personalize your portal</Heading>
-        <Heading>Type of devices do you own?</Heading>
-      </Section>
+      <div style={{ marginTop: "6rem" }}>
+        <p>Let's personalize your portal</p>
+        <p>Type of devices do you own?</p>
+      </div>
 
       <div className="device-container">
         <SelectableTile
@@ -40,24 +36,31 @@ function Devices() {
         </SelectableTile>
       </div>
 
-      <CheckboxGroup orientation="horizontal" className="checkbox-container">
+      <div style={{ margin: "5em 2em 0.6em" }}>What are you looking for?</div>
+      <CheckboxGroup
+        orientation="horizontal"
+        className="checkbox-container"
+      >
         <Checkbox
           labelText="Provide security"
-          className="securityBox"
+          className={`securityBox ${isCheckedSecurity ? "checked" : ""}`}
           id="sec1"
           onClick={() => (DeviceObj.Security = !DeviceObj.Security)}
+          onChange={() => setIsCheckedSecurity(!isCheckedSecurity)}
         />
         <Checkbox
           labelText="Manage apps"
-          className="appBox"
+          className={`appBox ${isCheckedApps ? "checked" : ""}`}
           id="sec2"
           onClick={() => (DeviceObj.ManageApps = !DeviceObj.ManageApps)}
+          onChange={() => setIsCheckedApps(!isCheckedApps)}
         />
         <Checkbox
           labelText="Set up kiosk"
-          className="setUpbox"
+          className={`setUpbox ${isCheckedSetup ? "checked" : ""}`}
           id="sec3"
           onClick={() => (DeviceObj.SetUpkiosk = !DeviceObj.SetUpkiosk)}
+          onChange={() => setIsCheckedSetup(!isCheckedSetup)}
         />
       </CheckboxGroup>
     </DeviceContext.Provider>
