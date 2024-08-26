@@ -3,6 +3,7 @@ import './App.scss'
 
 import WelcomeHeader from './components/welcome/Welcome'
 import Devices from './components/devices/Devices'
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <WelcomeHeader name="Scott" />
       <Devices />
+      <Footer />
     </>
   )
 }

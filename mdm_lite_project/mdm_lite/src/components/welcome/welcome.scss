@@ -3,19 +3,28 @@
 @use "@carbon/themes/scss/themes" as *;
 @use "@carbon/themes";
 
+@use '@carbon/type';
 @use "@carbon/styles/scss/theme";
 @use "@carbon/react/scss/spacing";
 
+@include type.reset();
+@include type.default-type();
+@include type.type-classes();
 
-.WelcomeHeader {
-    background-color: white;
-    // background-color: theme.$g10;
-    height: 12em;
+
+.pageheader{
+    background-color: #ffffff;
     margin-top: 3em;
-    // margin: 12em 2em 2em;
+    height: 10em;
 }
 
-.checklist{
-    // margin-left: 2em;
-    // margin-top: 2rem;
+// Color for header 
+// .headerClass{
+//     background-color: #393939;
+// }
+
+#search-playground-1{
+    width: 50%;
+    block-size: 3rem;
+
 }
