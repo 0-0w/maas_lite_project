@@ -1,4 +1,3 @@
-import { PageHeader } from "@carbon/ibm-products";
 import {
   Header,
   HeaderMenuButton,
@@ -14,25 +13,17 @@ import {
   Grid,
 } from "@carbon/react";
 import { SideNav, SideNavItems, SideNavLink } from "@carbon/react";
-import { ProgressIndicator, ProgressStep } from "@carbon/react";
 import { Search } from "@carbon/react";
 import { Notification } from "@carbon/icons-react";
 
 import { useState } from "react";
 
 import "./welcome.scss";
-function WelcomeHeader({ name }) {
+function WelcomeHeader() {
   const [isSideNavExpanded, setIsSideNavExpanded] = useState(false);
 
   return (
     <>
-      <PageHeader title={`Welcome ${name}`} className="pageheader">
-        <ProgressIndicator className="progrerssIndicator">
-          <ProgressStep complete label="Welcome" />
-          <ProgressStep current label="Organistion needs" />
-        </ProgressIndicator>
-      </PageHeader>
-
       <Header aria-label="IBM Platform Name">
         <HeaderMenuButton
           aria-label="Open menu"
@@ -46,19 +37,18 @@ function WelcomeHeader({ name }) {
           MaaS360 Lite
         </HeaderName>
 
-
-        <HeaderGlobalBar className="headerGlobalBar"> 
-        {/* TODO: fix the search bar */}
-        <Search
-          closeButtonLabelText="Clear search input"
-          id="search-playground-1"
-          labelText="Label text"
-          placeholder="Search devices, user, apps, policies"
-          role="searchbox"
-          size="sm"
-          type="text"
-        />
-         {/* <HeaderGlobalAction
+        <HeaderGlobalBar className="headerGlobalBar">
+          {/* TODO: fix the search bar */}
+          <Search
+            closeButtonLabelText="Clear search input"
+            id="search-playground-1"
+            labelText="Label text"
+            placeholder="Search devices, user, apps, policies"
+            role="searchbox"
+            size="sm"
+            type="text"
+          />
+          {/* <HeaderGlobalAction
             aria-label="Search"
             onClick={() => console.log("clicked")}
           >
@@ -70,28 +60,16 @@ function WelcomeHeader({ name }) {
             onClick={() => console.log("clicked")}
           >
             <Notification size={20} />
-          </HeaderGlobalAction>  
-
-        {/* <HeaderGlobalAction aria-label="App Switcher" onClick={action('app-switcher click')} tooltipAlignment="end">
-              <SwitcherIcon size={20} />
-            </HeaderGlobalAction> */}
+          </HeaderGlobalAction>
         </HeaderGlobalBar>
-
 
         <HeaderNavigation aria-label="IBM [Platform]">
           <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
-          <HeaderMenuItem href="#">Link 2</HeaderMenuItem>
-          <HeaderMenuItem href="#">Link 3</HeaderMenuItem>
-
-          <HeaderMenu aria-label="Link 4" menuLinkName="Link 4">
+          <HeaderMenu aria-label="Account" menuLinkName="Account">
             <HeaderMenuItem href="#">Sub-link 1</HeaderMenuItem>
-            <HeaderMenuItem isActive href="#">
-              Sub-link 2
-            </HeaderMenuItem>
             <HeaderMenuItem href="#">Sub-link 3</HeaderMenuItem>
           </HeaderMenu>
         </HeaderNavigation>
-
 
         <SideNav
           aria-label="Side navigation"
@@ -107,7 +85,6 @@ function WelcomeHeader({ name }) {
             </SideNavLink>
           </SideNavItems>
         </SideNav>
-
       </Header>
     </>
   );

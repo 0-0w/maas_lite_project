@@ -1,0 +1,15 @@
+@use "@carbon/react";
+@use "@carbon/react/scss/components";
+@use "@carbon/themes/scss/themes" as *;
+@use "@carbon/themes";
+
+@use '@carbon/type';
+@use "@carbon/styles/scss/theme";
+@use "@carbon/react/scss/spacing";
+
+
+.pageheader{
+    background-color: #ffffff;
+    margin-top: 3em;
+    height: 10em;
+}
