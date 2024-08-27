@@ -7,10 +7,6 @@ import {
   HeaderNavigation,
   HeaderGlobalAction,
   HeaderGlobalBar,
-  FlexGrid,
-  Column,
-  Row,
-  Grid,
 } from "@carbon/react";
 import { SideNav, SideNavItems, SideNavLink } from "@carbon/react";
 import { Search } from "@carbon/react";

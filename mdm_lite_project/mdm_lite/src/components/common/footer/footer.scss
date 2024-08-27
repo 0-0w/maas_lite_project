@@ -8,12 +8,14 @@
 @use "@carbon/react/scss/spacing";
 
 
-.pageheader{
-    background-color: #ffffff;
-    margin-top: 3em;
-    height: 10em;
+.footer-button{
+    // margin: 0 !important;
+    margin-top: 10em;
+    margin-left: 0 !important;
 }
 
-.progrerssIndicator{
-    margin-top: 1em;
+
+.SkipButton {
+    border: 1px solid black !important;
+    width: 23em !important;
 }

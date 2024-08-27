@@ -3,7 +3,7 @@
 @use "@carbon/themes/scss/themes" as *;
 @use "@carbon/themes";
 
-@use '@carbon/type';
+@use "@carbon/type";
 @use "@carbon/styles/scss/theme";
 @use "@carbon/react/scss/spacing";
 
@@ -11,81 +11,38 @@
 @include type.default-type();
 @include type.type-classes();
 
-$size__site_content_width: 1024px;
-$media_queries: (
-  "mobile": unquote("only screen and (max-width: 512px)"),
-  "tablet":
-    unquote(
-      "only screen and (min-width: 513px) and (max-width: $size__site_content_width)"
-    ),
-  "desktop":
-    unquote("only screen and (min-width: ($size__site_content_width + 1))"),
-  "retina2":
-    unquote(
-      "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)"
-    ),
-  "retina3":
-    unquote(
-      "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)"
-    ),
-  "landscape": unquote("screen and (orientation:landscape) "),
-  "portrait": unquote("screen and (orientation:portrait) "),
-);
+.DeviceHeading {
+  margin-top: 4em;
+}
 
-@mixin for_breakpoint($breakpoints) {
-  $conditions: ();
-  @each $breakpoint in $breakpoints {
-    $conditions: append(
-      $conditions,
-      #{inspect(map-get($media_queries, $breakpoint))},
-      comma
-    );
-  }
+.device-Apple,
+.device-Andriod {
+  height: 8rem;
+}
 
-  @media #{$conditions} {
-    @content;
-  }
+.additional-options-heading {
+  margin-top: 5em;
 }
 
 
-
-// .device-container {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
-.device-Apple, .device-Andriod{
-  height: 7rem;
-  width: 15rem;
-}
-
-.checkbox-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.securityBox,
-.appBox,
+.securityBox,.appBox,
 .setUpbox {
   border: 1px solid black;
   background-color: white;
   border-radius: 25px;
-  padding: 6px 15px 10px;
+  padding: 5px 15px 10px;
+  margin-top: 0.3em;
 }
 
-// .setUpbox {
-//   @media only screen and (max-width: 530px) {
-//     margin-top: 1em;
-//   }
-// }
 
-// .appBox {
-//   @media only screen and (max-width: 530px) {
-//     margin-top: 1em;
-//   }
-// }
 
-// .CheckedBox{
-  // background-color: theme.$g10;
-// }
 
+.securityBoxChecked,
+.appBoxChecked,
+.setUpboxChecked {
+  border: 1px solid black;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 6px 15px 10px;
+  margin-top: 0.3em;
+}
